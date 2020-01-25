@@ -1,31 +1,37 @@
 import 'dart:math';
 
-class ConsoleLogger
+class JLogger
 {
 	static final stackTraceRegex = RegExp(r'#[0-9]+[\s]+(.+) \(([^\s]+)\)');
-	static final ConsoleLogger I = ConsoleLogger._internal();
+	static final JLogger I = JLogger._internal();
 
-	factory ConsoleLogger() => I;
+	factory JLogger() => I;
 
 	int debugMethodCount = 1;
 	int errorMethodCount = 8;
 
 	CLogPrinter logPrinter;
 
-	ConsoleLogger._internal()
+	JLogger._internal()
 	{
 		logPrinter = CLogPrinter(this);
 	}
 
 
-	void show(String msg, { StackTrace stackTrace, String label: '', depth: 1})
+	static void log(String msg, { StackTrace stackTrace, String label: '', int depth: 1})
+	{
+		I._show(msg, stackTrace: stackTrace, label: label, depth: depth);
+	}
+
+
+	void _show(String msg, { StackTrace stackTrace, String label: '', depth: 1})
 	{
 		logPrinter._print(createJLog(msg, trace: stackTrace, label: label, depth: depth));
 	}
 
 	static void S(String msg, { StackTrace stackTrace, String label: '', int depth: 1})
 	{
-		I.show(msg, stackTrace: stackTrace, label: label, depth: depth);
+		I._show(msg, stackTrace: stackTrace, label: label, depth: depth);
 	}
 
 
@@ -41,7 +47,7 @@ class ConsoleLogger
 
 		for (String line in lines)
 		{
-			var match = ConsoleLogger.stackTraceRegex.matchAsPrefix(line);
+			var match = JLogger.stackTraceRegex.matchAsPrefix(line);
 			if (match != null)
 			{
 				if (match.group(2).startsWith('package:chat/jhul/logger'))
@@ -116,7 +122,7 @@ class CLogPrinter
 	static const vChar = '│';
 	static const hChar = "─";
 
-	final ConsoleLogger logger;
+	final JLogger logger;
 
 	final int lineMaxLength = 120 - 4; // - |  |
 
