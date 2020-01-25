@@ -60,7 +60,19 @@ class JLogger
 
 				String countPrefix = count.toString().length < 2 ? '0' : '';
 
-				String newLine = '$countPrefix$count ${match.group(2)} :: ${match.group(1).split('.')[1]}()' ;
+
+				String function = '';
+				try
+				{
+					function = '::'+match?.group(1)?.split('.')[1] + '()';
+				}
+				catch( e )
+				{
+
+				}
+
+				String newLine = '$countPrefix$count ${match?.group(2)}$function' ;
+
 				jLog.addLine( newLine.replaceAll('<anonymous closure>', '()') );
 
 				if ( ++count == jLog.traceDepth )
