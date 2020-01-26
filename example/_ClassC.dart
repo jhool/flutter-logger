@@ -2,7 +2,7 @@ import 'package:jlogger/jlogger.dart';
 
 class C
 {
-	showDeepLog()
+	showDeepLogC()
 	{
 		JLogger.log('This is Log has longer trace depth', depth: 3, label: 'TraceDepth');
 	}

@@ -11,5 +11,5 @@ void main()
 
 	a.showLog();
 
-	a.showDeepLog();
+	a.showDeepLogA();
 }

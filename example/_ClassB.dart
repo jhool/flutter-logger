@@ -11,8 +11,8 @@ class B
 		JLogger.log('Simple Log With Label', label: 'LabeledLog');
 	}
 
-	void showDeepLog()
+	void showDeepLogB()
 	{
-		c.showDeepLog();
+		c.showDeepLogC();
 	}
 }

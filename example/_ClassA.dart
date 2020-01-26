@@ -10,8 +10,8 @@ class A
 		b.showLog();
 	}
 
-	void showDeepLog()
+	void showDeepLogA()
 	{
-		b.showDeepLog();
+		b.showDeepLogB();
 	}
 }

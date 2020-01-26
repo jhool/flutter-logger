@@ -1,6 +1,6 @@
 name: jlogger
 description: Simple Flutter console logger with traceable log. Improves readability of logs.
-version: 0.0.5
+version: 0.0.7
 homepage: https://github.com/jhool/flutter-logger
 
 environment:
