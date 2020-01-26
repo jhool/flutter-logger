@@ -1,16 +1,26 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.5] - TODO: Add release date.
+ 
+ * Added Example
+  
 
-* TODO: Describe initial release.
+## [0.0.4] - TODO: Add release date.
+   
+ * fixed : error thrown when called inside main function
+
+
+## [0.0.3] - TODO: Add release date.
+
+ * BugFix
 
 
 ## [0.0.2] - TODO: Add release date.
 
-Bug fix
+ * Bug fix
 
-## [0.0.3] - TODO: Add release date.
 
-Bug fix
+## [0.0.1] - TODO: Add release date.
 
-## [0.0.4] - TODO: Add release date.
+ * TODO: Describe initial release.
 
-fixed : error thrown when called inside main function
+
+

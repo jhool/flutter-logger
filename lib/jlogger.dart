@@ -35,8 +35,8 @@ class JLogger
 		I.show(msg, stackTrace: stackTrace, label: label, depth:depth);
 	}
 
-
-
+	/// converts log data into formatted log object
+	/// returns prepared [JLog] object
 	JLog createJLog( String msg, { StackTrace trace, String label: '', depth:1} )
 	{
 		JLog  jLog = JLog( msg, depth, label: label );
@@ -91,6 +91,7 @@ class JLogger
 
 }
 
+/// Represents Unit Log
 class JLog
 {
 	final int traceDepth;
@@ -111,7 +112,7 @@ class JLog
 
 	}
 
-
+	/// append line to a log
 	void addLine(String line)
 	{
 		if( line.length > width )
